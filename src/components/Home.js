@@ -14,6 +14,11 @@ const Home = () => {
     );
     const res = await responce.json();
     const result = res.results;
+
+    result.forEach(element => {
+      element.price = Math.floor(Math.random() * 100 + 10)
+    });
+
     setInput("");
     setData(result);
   };

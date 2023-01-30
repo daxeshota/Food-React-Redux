@@ -4,7 +4,7 @@ import { addToCart } from "../redux";
 
 const Items = ({ data }) => {
   const dispatch = useDispatch();
-
+console.log(data)
   const addFunc = (item) => {
     dispatch(addToCart(item));
   };
@@ -20,6 +20,7 @@ const Items = ({ data }) => {
             >
               <img src={item.image} alt="" style={{ height: "300px", width: "300px" }} className="rounded-2" />
               <h3 className="text-center my-2">{item.title}</h3>
+              <h3 className="text-center my-2">Price : {item.price}</h3>
               <button onClick={() => addFunc(item)} className="btn btn-secondary">Add To Favorite</button>
             </div>
           );
